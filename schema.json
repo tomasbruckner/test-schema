@@ -34,10 +34,12 @@
             },
             "uid": {
               "type": "string",
+              "default": "123456",
               "nullable": true
             },
             "name": {
               "minLength": 1,
+              "enum": ["hodnota1", "hodnota2", "hodnota3"],
               "type": "string"
             },
             "description": {
@@ -1273,6 +1275,7 @@
             "package"
           ],
           "type": "object",
+          "description": "Tohle je testovaci popis package",
           "properties": {
             "package": {
               "$ref": "#/components/schemas/PackageVM"
