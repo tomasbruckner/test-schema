@@ -48,7 +48,8 @@
             },
             "version": {
               "minLength": 1,
-              "type": "string"
+              "type": "string",
+              "description": "Testovaci popis"
             },
             "minimalProductVersion": {
               "type": "string",
