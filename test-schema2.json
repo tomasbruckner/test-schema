@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/components/schemas/Foo",
+  "components": {
+    "schemas": {
+      "Foo": {
+        "required": [
+          "package"
+        ],
+        "type": "object",
+        "properties": {
+          "$schema": {
+            "type": "string",
+            "nullable": true
+          },
+          "package": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Test"
+              },
+              {
+                "$ref": "#/components/schemas/Test2"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "Test": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "enum": [
+              "test"
+            ],
+            "type": "string",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Test2": {
+        "required": [
+          "type",
+          "foo"
+        ],
+        "type": "object",
+        "properties": {
+          "foo": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "test2"
+            ],
+            "type": "string",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
